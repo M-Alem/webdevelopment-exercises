@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;edu.ap.jdbc&apos; to &apos;SOAP-JDBC/src&apos;&#x0D;&#x0A;- Original project: &apos;JSP-JDBC&apos;&#x0D;&#x0A;- Destination element: &apos;SOAP-JDBC/src&apos;&#x0D;&#x0A;- Original element: &apos;JSP-JDBC/src/edu.ap.jdbc&apos;" description="Copy package" destination="=SOAP-JDBC/src" element1="/src&lt;edu.ap.jdbc" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1543489454090" version="1.0"/>
+</session>

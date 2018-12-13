@@ -1,0 +1,19 @@
+package edu.ap.ws;
+
+import java.util.ArrayList;
+
+import com.mysql.cj.jdbc.JdbcConnection;
+
+public class WSJDBC {
+	public WSJDBC() {}
+	
+	public String[] selectAll() {
+		JDBConnection c = JdbcConnection.getJDBConnection();
+		c.open("Students", "root", "root");
+		ArrayList<String> arr = c.selectAll("SELECT * FROM STUDENTS;");
+		
+		String[] t = new String[arr.size()];
+		arr.toArray();
+		return c;
+	}
+}
