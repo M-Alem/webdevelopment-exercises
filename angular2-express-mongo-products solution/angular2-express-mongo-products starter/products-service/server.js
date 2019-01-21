@@ -15,8 +15,11 @@ MongoClient.connect('mongodb://root:pwroot1@ds247290.mlab.com:47290/products', {
     })
 })
 
-app.use(bodyParser.urlencoded({extended: true}))
+
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+//app.use(express.static('public'))
+//app.set('view engine', 'ejs')
 
 // To resolve CORS error :
 // https://medium.com/@ahsan.ayaz/how-to-handle-cors-in-an-angular2-and-node-express-applications-eb3de412abef
@@ -47,10 +50,17 @@ app.get('/list', (req, res) => {
 
 // Add a product to the db
 app.post('/add', (req, res) => {
+  db.collection('products').insertOne(req.body, (err, result) => {
+    if (err) throw err
+ })
 })
 
 // Edit a product
 app.post('/edit', (req, res) => {
+  var query = { name: req.body.name }
+  db.collection('products').replaceOne(query, req.body, (err, result) => {
+     if (err) throw err
+  })
 })
 
 // Find a product
@@ -68,4 +78,7 @@ app.post('/search', (req, res) => {
 
 // Delete a product
 app.delete('/:name', (req, res) => {
+  db.collection('products').findOneAndDelete({name: req.params.name}, (err, result) => {
+    if (err) throw err
+  })
 })
